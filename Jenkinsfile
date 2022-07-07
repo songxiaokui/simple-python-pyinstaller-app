@@ -41,7 +41,6 @@ pipeline {
             }
             post {
                 always {
-                    echo ${env}
                     echo ${env.BUILD_ID}
                     sh 'echo Done'
                 }
