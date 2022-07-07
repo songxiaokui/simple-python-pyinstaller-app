@@ -45,7 +45,7 @@ pipeline {
                 }
                 success {
                     sh 'pwd'
-                    archiveArtifacts './dist/add2vals'
+                    archiveArtifacts 'dist/add2vals'
                 }
                 failure {
                     echo "deploy failed"
