@@ -37,8 +37,7 @@ pipeline {
             }
             steps {
                 sh 'echo start...'
-                sh "find / -name pyinstaller"
-                sh 'pyinstaller --onefile sources/add2vals.py'
+                sh '/root/.pyenv/versions/2.7.17/bin/pyinstaller --onefile sources/add2vals.py'
             }
             post {
                 always {
