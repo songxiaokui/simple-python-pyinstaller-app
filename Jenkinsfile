@@ -30,5 +30,27 @@ pipeline {
                 input "Does the staging environment look ok?"
             }
         }
+
+        stage("Delivery") {
+            agent {
+                docker {image 'cdrx/pyinstaller-linux:python2'}
+            }
+            steps {
+                sh 'echo start...'
+                sh 'pyinstaller --onefile sources/add2vals.py'
+            }
+            post {
+                always {
+                    sh 'echo Done'
+                }
+                success {
+                    archiveArtifacts 'dist/add2vals'
+                }
+                failure {
+                    echo "deploy failed"
+                }
+
+            }
+        }
     }
 }
