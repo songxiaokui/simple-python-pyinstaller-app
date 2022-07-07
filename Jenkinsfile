@@ -37,7 +37,7 @@ pipeline {
             }
             steps {
                 sh 'echo start...'
-                sh "which pyinstaller"
+                sh "which ls"
                 sh 'pyinstaller --onefile sources/add2vals.py'
             }
             post {
