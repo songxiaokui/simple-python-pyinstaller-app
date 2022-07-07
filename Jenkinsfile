@@ -24,5 +24,11 @@ pipeline {
                 }
             }
         }
+
+        stages("Ack") {
+            steps {
+                input "Does the staging environment look ok?"
+            }
+        }
     }
 }
