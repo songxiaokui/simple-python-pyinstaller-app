@@ -44,7 +44,7 @@ pipeline {
                     sh 'echo Done'
                 }
                 success {
-                    sh 'mkdir dist'
+                    sh 'pwd'
                     archiveArtifacts './dist/add2vals'
                 }
                 failure {
