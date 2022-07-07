@@ -41,11 +41,11 @@ pipeline {
             }
             post {
                 always {
-                    echo ${env.BUILD_ID}
                     sh 'echo Done'
                 }
                 success {
-                    archiveArtifacts 'dist/add2vals'
+                    sh 'mkdir dist'
+                    archiveArtifacts './dist/add2vals'
                 }
                 failure {
                     echo "deploy failed"
