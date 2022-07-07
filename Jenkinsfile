@@ -25,7 +25,7 @@ pipeline {
             }
         }
 
-        stages("Ack") {
+        stage("Ack") {
             steps {
                 input "Does the staging environment look ok?"
             }
